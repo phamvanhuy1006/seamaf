@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: Josefin Sans;
+  src: url(../public/assets/fonts/JosefinSans-VariableFont_wght.ttf);
+}
