@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -12,15 +12,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon  from '@mui/icons-material/FavoriteBorder';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import Link from '@mui/material/Link';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-
 import Currency from './Currency';
+import { Link } from "react-router-dom";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -65,35 +61,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-const StyledLink = styled(Link)(({ theme }) => ({
-  '&.MuiLink-root:hover': {
-    color: '#f51167',
-  },
-  fontFamily: "'Josefin Sans', sans-serif",
-  fontSize: '16px',
-  color: '#ffffff',
-  marginRight: '50px',
-  lineHeight: '1',
-  padding: '17px 0',
-}))
-
-const StyledButton = styled(Button)(({ theme }) => ({
-   '&.MuiButtonBase-root:hover': {
-    color: '#f51167',
-  },
-  backgroundColor: 'red',
-  fontFamily: "'Josefin Sans', sans-serif",
-  fontSize: '16px',
-  color: '#ffffff',
-  marginRight: '50px',
-  lineHeight: '1',
-  padding: '17px 0',
-}));
-
 export default function Header() {
   
-  const pages = ['Products', 'Pricing', 'Blog'];
-  const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+  const pages = ['Home', 'Our Shop', 'On Sale', 'Our Services', 'Blog', 'Contact', 'Signin', 'Signup'];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -115,6 +85,8 @@ export default function Header() {
 
   return (
     <React.Fragment>
+      {/* {/* <Link to="/invoices">Invoices</Link> |{" "} */}
+        {/* <Link to="/banner">Expenses</Link>  */}
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" sx={{ color: '#212529', bgcolor: 'white'}}>
           <Container className="padding-none">
@@ -127,6 +99,7 @@ export default function Header() {
                 fontFamily="Josefin Sans, sans-serif"
                 overflow="visible"
                 fontWeight='bold'
+                fontSize="24px"
               >
                 RVM SeaMaf  
               </Typography>
@@ -176,56 +149,8 @@ export default function Header() {
         </AppBar>
       </Box>
       <Box backgroundColor="#212529">
-        <Container
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'flex',
-            typography: 'body1',
-            '& > :not(style) + :not(style)': {
-              ml: 2,
-            },
-          }}
-          // onClick=""
-        >
-          <StyledLink href="#" underline="none" className="navigation-text">
-            {'Home'}
-          </StyledLink>
-          <StyledLink href="#" underline="none" className="navigation-text">
-            {'Our Shop'}
-          </StyledLink>
-          <StyledBadge badgeContent={'SALE'} badgeStyle color="error">
-            <StyledLink href="#" underline="none" className="navigation-text">
-              {'On Sale'}
-            </StyledLink>
-          </StyledBadge>
-          <StyledLink href="#" underline="none" className="navigation-text">
-            {'Our Services'}
-          </StyledLink>
-          <StyledLink href="#" underline="none" className="navigation-text">
-            {'Blog'}
-          </StyledLink>
-          <StyledLink href="#" underline="none" className="navigation-text">
-            {'Contact'}
-          </StyledLink>
-          <StyledLink href="#" underline="none" className="navigation-text">
-            {'Signin'}
-          </StyledLink>
-          <StyledLink href="#" underline="none" className="navigation-text">
-            {'Signup'}
-          </StyledLink>
-        </Container>
-        <Container maxWidth="xl">
+        <Container>
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            LOGO
-          </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -262,54 +187,33 @@ export default function Header() {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            LOGO
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <StyledButton
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </StyledButton>
-            ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+          <Link to="/home" underline="none" className="nav-link">
+            {'Home'}
+          </Link>
+          <Link to="/home" underline="none" className="nav-link">
+            {'Our Shop'}
+          </Link>
+          <StyledBadge badgeContent={'SALE'} badgeStyle color="error">
+            <Link to="/home" underline="none" className="nav-link">
+              {'On Sale'}
+            </Link>
+          </StyledBadge>
+          <Link to="/home" underline="none" className="nav-link">
+            {'Our Services'}
+          </Link>
+          <Link to="/home" underline="none" className="nav-link">
+            {'Blog'}
+          </Link>
+          <Link to="/home" underline="none" className="nav-link">
+            {'Contact'}
+          </Link>
+          <Link to="/login" underline="none" className="nav-link">
+            {'Signin'}
+          </Link>
+          <Link to="/home" underline="none" className="nav-link">
+            {'Signup'}
+          </Link>
           </Box>
         </Toolbar>
       </Container>
