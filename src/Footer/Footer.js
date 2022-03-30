@@ -130,11 +130,11 @@ function Footer() {
                 </About>
                 <UserfulLinks className="footer-stack-padding" sx={{
                   width: { lg: '50%', md: '100%', sm: '100%', xs: '100%' },
-                  '& li': { 
+                  '& li': {
                     // flexGrow: 1,
                     // alignItems: 'center',
                   },
-                  '& ul': { 
+                  '& ul': {
                     listStyleType: 'none', 
                     p: 0, width: '50%', 
                     mt: 0
@@ -179,8 +179,8 @@ function Footer() {
                   </div>  
                 </UserfulLinks>
               </Stack>
-              <Stack direction={{ lg: 'row', md: 'row', sm: 'column', xs: 'column' }} sx={{ alignItems: 'flex-start', pt: 2, width: '50%' }}>
-                <Blog className="footer-stack-padding" sx={{width: { lg: '50%'}}}>
+              <Stack direction={{ lg: 'row', md: 'row', sm: 'column', xs: 'column' }} sx={{ alignItems: 'flex-start', pt: 2, width: { lg: '50%', } }}>
+                <Blog className="footer-stack-padding" sx={{width: { lg: '50%', md: '100%', sm: '100%', xs: '100%' },}}>
                   <div className="footer-title-text">Blog</div>
                   <Stack direction="row" sx={{ flexGrow: 1, mb: '30px'}}>
                     <FooterBlogImg sx={{ backgroundImage: 'url(assets/footerblog1.png)'}}></FooterBlogImg>
@@ -200,7 +200,7 @@ function Footer() {
                   </Stack>
                 </Blog>
                 <Contact className="footer-stack-padding" sx={{
-                  width: { lg: '50%', md: '100%', sm: '100%', xs: '100%' }
+                  width: { lg: '50%', md: '100%', sm: '100%', xs: '100%' },
                   }}>
                   <div className="footer-title-text">Contact</div>
                   <Stack>
