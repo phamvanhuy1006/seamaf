@@ -19,3 +19,16 @@
 .css-u68qk3-MuiToolbar-root {
   padding: 8px 0px!important;
 }
+
+.nav-link {
+  &:hover {
+    color: #f51167;
+  }; 
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  margin-right: 50px;
+  line-height: 1;
+  padding: 17px 0;
+  text-decoration: none;
+}
