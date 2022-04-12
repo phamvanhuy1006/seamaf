@@ -4,24 +4,16 @@ import Body from './Body/Body';
 import Footer from './Footer/Footer';
 import React from 'react';
 import {
-  BrowserRouter,
-  Routes,
-  Route,
+  Outlet
 } from "react-router-dom";
-import Banner from './Body/Banner.js'
-import Login from './Component/Login';
 
 function App() {
+  const arr=[1,2,3]
   return (
     <React.Fragment>
-      <BrowserRouter>
       <Header/>
-          <Routes>
-            <Route path="/" element={<Body />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
+      <Outlet/>       
       <Footer/>
-      </BrowserRouter>,
     </React.Fragment>
   );
 }

@@ -112,7 +112,7 @@ const ContactList = styled(Stack)(({ theme }) => ({
 
 function Footer() {
   return (
-    <React.Fragment>
+    <footer>
       <div className="footer-background">
         <Container style={{ padding: 0 }}>
           <Box sx={{ flexGrow: 1 }}>
@@ -121,12 +121,11 @@ function Footer() {
                 <About className="footer-stack-padding" sx={{width: { lg: '50%', md: '100%', sm: '100%', xs: '100%' }}}>
                   <div className="footer-title-text">About</div>
                   <p className="footer-text">Online & physical bead shop with the best beads and beading supplies in Zimbabwe ✓ Over 9000 beads for jewelry making ✓ Glass beads ✓ Beading supplies and much more!</p>
-                  <img width="100%" src='assets/cards.png' alt="logo" />
+                  <img width="100%" src='/assets/cards.png' alt="logo" />
                   <EmailBox>
                     <EmailField placeholder="Enter e-mail"></EmailField>
                     <SubcribeButton sx={{ color: 'primary', right: { md: 44, sm: 74, xs: 34 }}}>subscribe</SubcribeButton>
                   </EmailBox>
-                  <card />
                 </About>
                 <UserfulLinks className="footer-stack-padding" sx={{
                   width: { lg: '50%', md: '100%', sm: '100%', xs: '100%' },
@@ -183,7 +182,7 @@ function Footer() {
                 <Blog className="footer-stack-padding" sx={{width: { lg: '50%', md: '100%', sm: '100%', xs: '100%' },}}>
                   <div className="footer-title-text">Blog</div>
                   <Stack direction="row" sx={{ flexGrow: 1, mb: '30px'}}>
-                    <FooterBlogImg sx={{ backgroundImage: 'url(assets/footerblog1.png)'}}></FooterBlogImg>
+                    <FooterBlogImg sx={{ backgroundImage: 'url(/assets/footerblog1.png)'}}></FooterBlogImg>
                     <div>
                       <span className="footer-title-text">BOHE MIAN WEDDING THEME</span>
                       <p className="footer-blog-text">1 year ago</p>
@@ -191,7 +190,7 @@ function Footer() {
                     </div>
                   </Stack>
                   <Stack direction="row" sx={{ flexGrow: 1, mb: '30px'}}>
-                    <FooterBlogImg sx={{ backgroundImage: 'url(assets/footerblog2.png)'}}></FooterBlogImg>
+                    <FooterBlogImg sx={{ backgroundImage: 'url(/assets/footerblog2.png)'}}></FooterBlogImg>
                     <div>
                       <span className="footer-title-text">Vintage Wedding Theme `</span>
                       <p className="footer-blog-text">1 year ago</p>
@@ -252,13 +251,14 @@ function Footer() {
                 <span className="footer-icon-text">LINKEDIN</span>
               </div>
             </Toolbar>
-            <div className="footer-Copyright">
-              Copyright ©2022 All rights reserved | Developed By Eloquent Geeks
-            </div>
+            <Box sx={{ display: 'flow-root' }}>
+              <h5 className="footer-copyright">Copyright ©2022 All rights reserved | Developed By Eloquent Geeks</h5>
+            </Box>
           </div>
         </Container>
       </div>
-    </React.Fragment>
+     
+    </footer>
   );
 }
   

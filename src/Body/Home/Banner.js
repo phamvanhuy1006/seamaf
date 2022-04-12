@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import { Typography, styled } from '@mui/material';
 import * as React from 'react';
 import { StatusProduct } from './LastestProducts';
-import './Body.scss';
+import '../Body.scss';
 
 const BannerCard = styled(Card)(({ theme }) => ({
   padding: '50px 34px 47px',

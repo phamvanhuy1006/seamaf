@@ -41,3 +41,32 @@
   font-family: Josefin Sans;
   src: url(../public/assets/fonts/JosefinSans-VariableFont_wght.ttf);
 }
+
+.button {
+  display: inline-block;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 167px;
+  padding: 18px 5px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  background: #f51167;
+  color: #fff;
+  line-height: normal;
+  cursor: pointer;
+  text-align: center;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+d-none {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: #585858;
+}

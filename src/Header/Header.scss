@@ -20,6 +20,10 @@
   padding: 8px 0px!important;
 }
 
+.css-okiw7o-MuiInputBase-root {
+  width: 100% !important;
+}
+
 .nav-link {
   &:hover {
     color: #f51167;
@@ -31,4 +35,18 @@
   line-height: 1;
   padding: 17px 0;
   text-decoration: none;
+}
+
+.nav-user {
+  background: unset;
+  border: unset;
+}
+
+.link-search {
+  width: 100%;
+
+  a {
+    margin-left: 15px;
+    display: inherit;
+  }
 }
